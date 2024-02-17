@@ -1,4 +1,4 @@
-FROM ubuntu:latest
-# COPY calculator.sh /app/calculator.sh
-COPY Calculator.java /app/Calculator.java
-# CMD sed -i 's/\r$//' /app/calculator.sh
+FROM openjdk:17
+WORKDIR /app
+COPY target/Calculator-1.0-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
