@@ -1,4 +1,12 @@
-# DevOps-Calculator-Project-Using-Maven
+# DevOps-Scientific-Calculator-Project-Using-Maven
+
+## Technologies Used
+
+1. Git/Github
+2. Jenkins for CI/CD Pipeline
+3. Docker for containerization
+4. Ansible for pulling image
+5. Tools: IntelliJ, Shell cmd
 
 ## Steps
 
