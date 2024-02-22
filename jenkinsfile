@@ -1,8 +1,9 @@
 pipeline {
     agent any
+    
     tools {
-            maven "mvn"
-            jdk "jdk"
+        maven "mvn" 
+        jdk "jdk" 
     }
 
     environment {
@@ -23,7 +24,7 @@ pipeline {
         stage('maven build') {
             steps {
                 script {
-                    mvnHome = tool "mvn"
+                    mvnHome = tool 'mvn' // Retrieves the Maven installation configured in Jenkins global tools
                     sh "${mvnHome}/bin/mvn clean package"
                 }
             }
