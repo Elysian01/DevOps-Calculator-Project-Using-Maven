@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+            maven "mvn"
+            jdk "jdk"
+    }
 
     environment {
         DOCKER_IMAGE_NAME = 'calculator'
@@ -7,11 +11,20 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+        stage('Branch Checkout & Cloning') {
             steps {
                 script {
                     // Checkout the code from the GitHub repository
                     git branch: 'main', url: "${GITHUB_REPO_URL}"
+                }
+            }
+        }
+
+        stage('maven build') {
+            steps {
+                script {
+                    mvnHome = tool "mvn"
+                    sh "${mvnHome}/bin/mvn clean package"
                 }
             }
         }
@@ -40,7 +53,7 @@ pipeline {
             steps {
                 script {
                     ansiblePlaybook(
-                        playbook: 'deploy.yml',
+                        playbook: 'playbook.yml',
                         inventory: 'inventory'
                      )
                 }
