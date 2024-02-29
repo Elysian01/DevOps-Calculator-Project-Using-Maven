@@ -17,5 +17,9 @@
 ``` ngrok http 8080```
 jenkins => System => Change Jenkins URL
 
-Test
+
+To run the jar file inside docker
+```
+java -jar Calculator-1.0-SNAPSHOT.jar
+```
 
