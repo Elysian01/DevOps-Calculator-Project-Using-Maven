@@ -20,6 +20,6 @@ jenkins => System => Change Jenkins URL
 
 To run the jar file inside docker
 ```
-java -jar Calculator-1.0-SNAPSHOT.jar
+java -cp Calculator-1.0-SNAPSHOT.jar org.calculator.Main
 ```
 
