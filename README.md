@@ -12,7 +12,7 @@
 
 1. Create a project in IntelliJ, choose Maven JDK-21
 2. Write Calculator Program and Test-cases (J-unit-5.8)
-3. 
+3. Setup Jenkins with tools, global credentials
 
 ``` ngrok http 8080```
 jenkins => System => Change Jenkins URL
